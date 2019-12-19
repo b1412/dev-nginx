@@ -1,7 +1,7 @@
 dist: trusty
 services:
 - docker
-after_success:
+script:
 - docker build -t $IMAGE_NAME .
 - echo "$TOKEN" | docker login  docker.pkg.github.com --username b1412 --password-stdin
 - docker tag $IMAGE_NAME:latest docker.pkg.github.com/b1412/dev-nginx/$IMAGE_NAME:$TRAVIS_BUILD_NUMBER

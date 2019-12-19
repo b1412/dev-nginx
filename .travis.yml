@@ -1,7 +1,4 @@
-language: jvm
-os: linux
 dist: trusty
-jdk: openjdk8
 services:
 - docker
 after_success:

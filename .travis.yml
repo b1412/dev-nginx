@@ -11,4 +11,4 @@ env:
   global:
     - IMAGE_NAME=dev-nginx
     - REPO=docker.pkg.github.com/b1412/dev-nginx
-    - DOCKER_USERNAME
+    - DOCKER_USERNAME=b1412

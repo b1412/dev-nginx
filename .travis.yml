@@ -3,7 +3,7 @@ services:
 - docker
 script:
 - docker build -t $REPO/$IMAGE_NAME .
-- echo "$TOKEN" | docker login  docker.pkg.github.com --username b1412 --password-stdin
+- echo "$TOKEN" | docker login  docker.pkg.github.com --username $DOCKER_USERNAME --password-stdin
 - docker tag $REPO/$IMAGE_NAME:latest $REPO/$IMAGE_NAME:$TRAVIS_BUILD_NUMBER
 - docker push $REPO/$IMAGE_NAME:$TRAVIS_BUILD_NUMBER
 - docker push $REPO/$IMAGE_NAME:latest
@@ -11,3 +11,4 @@ env:
   global:
     - IMAGE_NAME=dev-nginx
     - REPO=docker.pkg.github.com/b1412/dev-nginx
+    - DOCKER_USERNAME
